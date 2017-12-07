@@ -3,13 +3,13 @@ MEDIAN = 2
 MODE = 3
 MINIMUM = 4
 MAXIMUM = 5
-QUIT = 6
+REFRESH = 6
+QUIT = 7
 
 def main():
     
     choice = 0
-    
-    while choice != QUIT:
+    while choice != QUIT or REFRESH:
         display_menu()
         choice = int(input("Enter your desired choice: "))
         output = handle_choice(choice)
@@ -21,7 +21,8 @@ def display_menu():
     print("3) Calculate Mode")
     print("4) Calculate Minimum")
     print("5) Calculate Maximum")
-    print("6) Quit")
+    print("6) Refresh")
+    print("7) Quit")
     
 def hand_average(AVERAGE):
     
@@ -55,6 +56,8 @@ def handle_choice(choice):
         return hand_minimum(MINIMUM)
     elif choice == MAXIMUM:
         return hand_maximum(MAXIMUM)
+    elif choice == REFRESH:
+        return main()
     elif choice == QUIT:
         print("Exiting the program... Have a nice day!")
     else:

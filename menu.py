@@ -8,7 +8,6 @@ QUIT = 6
 def main():
     
     choice = 0
-    
     while choice != QUIT:
         display_menu()
         choice = int(input("Enter your desired choice: "))
